@@ -17,6 +17,9 @@
   text-align: center;
   max-width: 500px;
   opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .carousel-slide img {

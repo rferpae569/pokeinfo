@@ -39,6 +39,11 @@
   margin-bottom: 1rem;
 }
 
+[class$="-overlay-img"] {
+  display: block;
+  margin: 0 auto 1rem;
+}
+
 .overlay table {
   width: 100%;
   border-collapse: collapse;

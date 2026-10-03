@@ -167,7 +167,7 @@ export default function Enfrentamiento({ TYPES, TYPE_DETAILS }) {
 
   return (
     <motion.div {...fadeUp} className="enfrentamiento-section">
-      <h2>Enfrentamiento</h2>
+      <h2 className="text-3xl font-bold mb-4">Enfrentamiento</h2>
       <p>Selecciona dos tipos y ve quién tendría ventaja.</p>
 
       {/* Slots */}

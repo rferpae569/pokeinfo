@@ -126,3 +126,15 @@
   border-radius: 10px;
   object-fit: cover;
 }
+
+.type-icon {
+  display: block;
+  margin: 0 auto;
+}
+
+.type-icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}

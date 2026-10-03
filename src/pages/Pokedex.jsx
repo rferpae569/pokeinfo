@@ -16,7 +16,7 @@ export default function PokedexPage() {
       >
         <div className="intro-content">
           <div className="intro-text">
-            <h1>¿Qué es una Pokédex?</h1>
+            <h1 className="text-3xl font-bold mb-4">¿Qué es una Pokédex?</h1>
             <p>
               La Pokédex es una enciclopedia electrónica portátil creada por el
               Profesor Oak. Su función principal es registrar automáticamente
@@ -43,7 +43,7 @@ export default function PokedexPage() {
         viewport={{ once: true, amount: 0.2 }}
       >
         <div className="funcionamiento-content">
-          <h2>¿Cómo funciona la Pokédex?</h2>
+          <h2 className="text-3xl font-bold mb-4">¿Cómo funciona la Pokédex?</h2>
           <p>
             La Pokédex utiliza sensores avanzados capaces de identificar la
             forma, tamaño y características biológicas de los Pokémon en el
@@ -63,8 +63,7 @@ export default function PokedexPage() {
             <div className="funcionamiento-image">
               <img src="pokedex/FuncPokedex.webp" alt="FuncPokedex" />
               <p className="leyenda">
-                Imagen de la Pokédex por fuera. Se puede apreciar como la
-                Pokédex diferencia entre Pokémon avistados y capturados.
+                Imagen de la Pokédex por fuera.
               </p>
 
               <img src="pokedex/FuncPokedex2.webp" alt="FuncPokedex" />
@@ -72,13 +71,12 @@ export default function PokedexPage() {
 
               <img src="pokedex/FuncPokedex3.webp" alt="FuncPokedex" />
               <p className="leyenda">
-                Entrada de un Pokémon avistado; al número se suma el nombre y la
-                imagen del Pokémon.
+                Entrada de un Pokémon avistado.
               </p>
 
               <img src="pokedex/FuncPokedex4.webp" alt="FuncPokedex" />
               <p className="leyenda">
-                Entrada de un Pokémon capturado con todos sus datos disponibles.
+                Entrada de un Pokémon capturado.
               </p>
             </div>
           </div>
@@ -96,7 +94,7 @@ export default function PokedexPage() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.3 }}
       >
-        <h2>Pokédex Interactiva</h2>
+        <h2 className="text-3xl font-bold mb-4">Pokédex Interactiva</h2>
         <p>
           Aquí puedes buscar cualquier Pokémon de la primera a la quinta
           generación (del número 1 al 649) por su nombre o número en la Pokédex.

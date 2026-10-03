@@ -5,11 +5,22 @@ html {
 .header {
   position: sticky;
   top: 0;
+  width: 100%;
+  box-sizing: border-box;
   background-color: #e53e3e;
   color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 0.75rem 1rem;
   z-index: 1000;
+}
+
+nav {
+  width: 65%;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .header .logo {
@@ -48,22 +59,147 @@ html {
   color: #d69e2e;
 }
 
-nav {
-  width: 65%;
-  padding: 1rem 3rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 nav a:first-child {
   font-size: 1.5rem;
   font-weight: bold;
   color: white;
   text-decoration: none;
   transition: color 0.3s ease;
+} 
+
+/* ========================= */ /* BOTÓN HAMBURGUESA */ /* ========================= */
+.menu-toggle {
+  display: none;
+  margin: 0;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
 }
 
+.menu-toggle:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+} 
+
+/* ========================= */ /* RESPONSIVE */ /* ========================= */
+@media (max-width: 768px) {
+
+  .header {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  nav {
+    width: 100%;
+    max-width: none;
+    padding: 0.25rem;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .header .logo img {
+    width: 100px;
+    height: 90px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  .header ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin: 0;
+    padding: 0.75rem 0;
+    background-color: #e53e3e;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .header ul.menu-open {
+    display: flex;
+  }
+
+  .header ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .header ul li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  } 
+  
+  /* ===================== */ /* HAMBURGUESA → X */ /* ===================== */
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+} 
+
+/* ========================= */ /* MÓVILES PEQUEÑOS */ /* ========================= */
+@media (max-width: 480px) {
+  .header {
+    padding: 0.5rem;
+  }
+
+  .header .logo img {
+    width: 90px;
+    height: 80px;
+  }
+
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-toggle span {
+    width: 25px;
+    height: 3px;
+  }
+
+}
+
+/* ========================= */ /* ANCLAS DE SECCIÓN */ /* ========================= */
 #Pokedex,
 #Types,
 #Gyms,

@@ -122,7 +122,7 @@ export default function TiposPokedex() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.2 }}
     >
-      <h2>Tipos de Pokédex</h2>
+      <h2 className="text-3xl font-bold mb-4">Tipos de Pokédex</h2>
       <p>
         A lo largo de las diferentes generaciones de Pokémon, han existido
         múltiples diseños de Pokédex, cada uno con características únicas y

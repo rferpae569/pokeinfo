@@ -115,7 +115,9 @@ export default function Gyms() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.2 }}
         >
-          <h2 className="region-title">{region.region}</h2>
+          <h2 className="region-title text-3xl font-bold mb-4">
+            {region.region}
+          </h2>
 
           <div className="gyms-container">
             {region.gyms.map((gym) => (
@@ -174,24 +176,16 @@ export default function Gyms() {
                   {/* Tipo gimnasio e imagen */}
                   <p>
                     <strong>Tipo:</strong>{" "}
-                    {gym.type.includes(" / ") ? (
-                      gym.type
-                        .split(" / ")
-                        .map((tipo) => (
-                          <img
-                            key={tipo}
-                            src={`icons/tipos/${tipo.trim()}.png`}
-                            alt={`Tipo ${tipo.trim()}`}
-                            className="type-icon"
-                          />
-                        ))
-                    ) : (
-                      <img
-                        src={`icons/tipos/${gym.type.trim()}.png`}
-                        alt={`Tipo ${gym.type.trim()}`}
-                        className="type-icon"
-                      />
-                    )}
+                    <div className="type-icons-container">
+                      {gym.type.split(" / ").map((tipo) => (
+                        <img
+                          key={tipo}
+                          src={`icons/tipos/${tipo.trim()}.png`}
+                          alt={`Tipo ${tipo.trim()}`}
+                          className="type-icon"
+                        />
+                      ))}
+                    </div>
                   </p>
 
                   {/* Medalla gimnasio */}

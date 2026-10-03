@@ -53,3 +53,32 @@
   margin-top: -250px;
   visibility: hidden;
 }
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1rem;
+  }
+
+  .footer-logo img {
+    width: 100px;
+    height: 90px;
+  }
+
+  .footer p {
+    font-size: 1rem;
+  }
+
+  .footer-logos-row {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-logos-row img {
+    height: 120px;
+    max-width: 30%;
+  }
+
+  .footer-logos-row img.creatures-logo {
+    height: 40px;
+  }
+}

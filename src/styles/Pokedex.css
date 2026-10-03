@@ -68,6 +68,9 @@ h2 {
 .intro-image {
   flex: 1;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .intro-image img.profesor,
@@ -75,11 +78,9 @@ img.funcpokedex {
   width: 220px;
 }
 
-.leyenda {
-  margin-top: 8px;
-  font-size: 0.9rem;
-  font-style: italic;
-  color: #ffffff;
+.intro-image .leyenda {
+  width: 220px;
+  margin: 8px auto 0;
   text-align: center;
 }
 
