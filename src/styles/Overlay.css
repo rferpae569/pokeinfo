@@ -113,3 +113,89 @@
   text-transform: capitalize;
 }
 
+@media (max-width: 768px) {
+  .overlay {
+    padding: 1rem;
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  .close-overlay-btn {
+    top: 10px;
+    right: 10px;
+    width: auto;
+    font-size: 1.3rem;
+    z-index: 10;
+  }
+
+  .leader-overlay-content,
+  .gym-overlay-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 2.5rem 0.5rem 1rem;
+    box-sizing: border-box;
+  }
+
+  .overlay img {
+    width: 35%;
+    height: auto;
+    max-width: 150px;
+    margin-bottom: 0.7rem;
+  }
+
+  .overlay h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .overlay table {
+    width: 100%;
+    font-size: 0.85rem;
+    margin-top: 0.7rem;
+  }
+
+  .overlay table td {
+    padding: 0.5rem 0.4rem;
+  }
+
+  .overlay table td:first-child {
+    width: 30%;
+  }
+
+  .overlay table td:last-child {
+    width: 70%;
+    word-break: break-word;
+  }
+
+  .pokemon-team {
+    margin-top: 1.2rem;
+  }
+
+  .pokemon-team h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .pokemon-team-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .pokemon-card {
+    width: 100%;
+    padding: 0.3rem;
+    box-sizing: border-box;
+  }
+
+  .pokemon-card img {
+    width: 75px;
+    height: 75px;
+  }
+
+  .pokemon-card span {
+    font-size: 0.85rem;
+  }
+}
+

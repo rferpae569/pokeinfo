@@ -43,7 +43,9 @@ export default function PokedexPage() {
         viewport={{ once: true, amount: 0.2 }}
       >
         <div className="funcionamiento-content">
-          <h2 className="text-3xl font-bold mb-4">¿Cómo funciona la Pokédex?</h2>
+          <h2 className="text-3xl font-bold mb-4">
+            ¿Cómo funciona la Pokédex?
+          </h2>
           <p>
             La Pokédex utiliza sensores avanzados capaces de identificar la
             forma, tamaño y características biológicas de los Pokémon en el
@@ -61,23 +63,25 @@ export default function PokedexPage() {
               comprender a cada criatura.
             </p>
             <div className="funcionamiento-image">
-              <img src="pokedex/FuncPokedex.webp" alt="FuncPokedex" />
-              <p className="leyenda">
-                Imagen de la Pokédex por fuera.
-              </p>
+              <div className="funcionamiento-item">
+                <img src="pokedex/FuncPokedex.webp" alt="FuncPokedex" />
+                <p className="leyenda">Imagen de la Pokédex por fuera.</p>
+              </div>
 
-              <img src="pokedex/FuncPokedex2.webp" alt="FuncPokedex" />
-              <p className="leyenda">Entrada de un Pokémon desconocido.</p>
+              <div className="funcionamiento-item">
+                <img src="pokedex/FuncPokedex2.webp" alt="FuncPokedex" />
+                <p className="leyenda">Entrada de un Pokémon desconocido.</p>
+              </div>
 
-              <img src="pokedex/FuncPokedex3.webp" alt="FuncPokedex" />
-              <p className="leyenda">
-                Entrada de un Pokémon avistado.
-              </p>
+              <div className="funcionamiento-item">
+                <img src="pokedex/FuncPokedex3.webp" alt="FuncPokedex" />
+                <p className="leyenda">Entrada de un Pokémon avistado.</p>
+              </div>
 
-              <img src="pokedex/FuncPokedex4.webp" alt="FuncPokedex" />
-              <p className="leyenda">
-                Entrada de un Pokémon capturado.
-              </p>
+              <div className="funcionamiento-item">
+                <img src="pokedex/FuncPokedex4.webp" alt="FuncPokedex" />
+                <p className="leyenda">Entrada de un Pokémon capturado.</p>
+              </div>
             </div>
           </div>
         </div>

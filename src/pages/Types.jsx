@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import aceroImg from "/icons/logoTipos/Acero.svg";
 import aguaImg from "/icons/logoTipos/Agua.svg";
@@ -153,16 +153,44 @@ const cardAnim = (i) => ({
 
 export default function Types() {
   const [selectedType, setSelectedType] = useState(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-  const closePanel = () => setSelectedType(null);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const infoPanelRef = useRef(null);
+  const typesRef = useRef(null);
+
+  const closePanel = () => {
+    setSelectedType(null);
+
+    if (window.innerWidth <= 768) {
+      setTimeout(() => {
+        typesRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 100);
+    }
+  };
 
   return (
     <div>
       <div className="types-wrapper">
         <motion.div
           className="types-container"
+          ref={typesRef}
           animate={{
-            x: selectedType ? -150 : 0,
+            x: selectedType && !isMobile ? -150 : 0,
             transition: { type: "spring", stiffness: 100, damping: 20 },
           }}
         >
@@ -187,7 +215,18 @@ export default function Types() {
                 className={`type-card ${
                   selectedType === name ? "selected" : ""
                 }`}
-                onClick={() => setSelectedType(name)}
+                onClick={() => {
+                  setSelectedType(name);
+
+                  if (window.innerWidth <= 768) {
+                    setTimeout(() => {
+                      infoPanelRef.current?.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                    }, 100);
+                  }
+                }}
               >
                 <img src={img} alt={name} />
                 <span>{name}</span>
@@ -198,16 +237,24 @@ export default function Types() {
 
         {/* Informaicon correspondiente del tipo seleccionado */}
         <motion.div
+          ref={infoPanelRef}
           className="type-info-panel"
           initial={{ width: 0, opacity: 0 }}
           animate={{
-            width: selectedType ? "300px" : 0,
+            width: selectedType ? (isMobile ? "100%" : "300px") : 0,
             opacity: selectedType ? 1 : 0,
             transition: { type: "spring", stiffness: 100, damping: 20 },
           }}
         >
           {selectedType && TYPE_DETAILS[selectedType] && (
-            <div style={{ top: 0, left: 0, width: "300px" }}>
+            <div
+              style={{
+                top: 0,
+                left: 0,
+                width: isMobile ? "100%" : "300px",
+              }}
+            >
+              {" "}
               <motion.div
                 key={selectedType}
                 initial={{ opacity: 0, y: 20 }}

@@ -181,3 +181,9 @@
 .tournament-name {
   font-weight: bold;
 }
+
+@media (max-width: 768px) {
+  .leagues-grid {
+    grid-template-columns: 1fr;
+  }
+}

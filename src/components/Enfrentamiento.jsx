@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "../styles/Enfrentamiento.css";
 
@@ -7,6 +7,7 @@ export default function Enfrentamiento({ TYPES, TYPE_DETAILS }) {
   const [slot2, setSlot2] = useState(null);
   const [resultado, setResultado] = useState(null);
   const [ganadorInfo, setGanadorInfo] = useState(null);
+  const enfrentamientoRef = useRef(null);
 
   // ✅ Datos de ventajas y debilidades
   const TYPE_MATCHUPS = {
@@ -112,6 +113,13 @@ export default function Enfrentamiento({ TYPES, TYPE_DETAILS }) {
     setSlot2(null);
     setResultado(null);
     setGanadorInfo(null);
+
+    setTimeout(() => {
+      enfrentamientoRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 100);
   };
 
   const luchar = () => {
@@ -166,7 +174,11 @@ export default function Enfrentamiento({ TYPES, TYPE_DETAILS }) {
   };
 
   return (
-    <motion.div {...fadeUp} className="enfrentamiento-section">
+    <motion.div
+      {...fadeUp}
+      ref={enfrentamientoRef}
+      className="enfrentamiento-section"
+    >
       <h2 className="text-3xl font-bold mb-4">Enfrentamiento</h2>
       <p>Selecciona dos tipos y ve quién tendría ventaja.</p>
 

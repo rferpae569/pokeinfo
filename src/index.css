@@ -29,3 +29,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@media (max-width: 768px) {
+  main {
+    width: 100%;
+    min-width: 0;
+  }
+}

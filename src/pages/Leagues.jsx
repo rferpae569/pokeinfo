@@ -52,10 +52,24 @@ export default function Leagues() {
   // const [pokemonSprites, setPokemonSprites] = useState({});
   const [openCard, setOpenCard] = useState(null);
   const [selectedTrainer, setSelectedTrainer] = useState(null);
+  const leagueRefs = useRef({});
 
-  const toggleCard = (id) => {
-    setOpenCard(openCard === id ? null : id);
-  };
+ const toggleCard = (id) => {
+  const isClosing = openCard === id;
+
+  if (isClosing) {
+    setOpenCard(null);
+
+    setTimeout(() => {
+      leagueRefs.current[id]?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }, 600);
+  } else {
+    setOpenCard(id);
+  }
+};
 
   // Función para abrir overlay del Elite Four o Campeón
   const handleTrainerClick = (leagueName, type, index = 0) => {
@@ -120,6 +134,7 @@ export default function Leagues() {
         {leagues.map((league, index) => (
           <motion.div
             key={league.id}
+            ref={(el) => (leagueRefs.current[league.id] = el)}
             className="league-card"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}

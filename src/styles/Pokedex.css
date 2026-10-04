@@ -108,24 +108,77 @@ img.funcpokedex {
 .funcionamiento-image {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto auto;
-  gap: 10px 20px;
-  justify-items: center;
-  align-items: center;
+  gap: 20px;
   margin-top: 20px;
+  align-items: start;
+}
+
+.funcionamiento-item {
+  text-align: center;
 }
 
 .funcionamiento-image img {
   width: 200px;
+  max-width: 100%;
   border-radius: 8px;
-  grid-row: 1;
 }
 
 .funcionamiento-image .leyenda {
-  grid-row: 2;
+  margin-top: 8px;
   font-size: 0.85rem;
   font-style: italic;
   color: #fff;
   text-align: center;
-  max-width: 160px;
+}
+
+/* =========================
+   RESPONSIVE - MÓVIL
+   ========================= */
+@media (max-width: 768px) {
+
+  /* Introducción */
+  .intro-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .intro-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .intro-image {
+    width: 100%;
+  }
+
+  .intro-image img.profesor {
+    width: 200px;
+    max-width: 100%;
+  }
+
+  .intro-image .leyenda {
+    width: 100%;
+  }
+
+
+  /* Imágenes del funcionamiento */
+  .funcionamiento-image {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 15px;
+  }
+
+  .funcionamiento-item {
+    width: 100%;
+  }
+
+  .funcionamiento-image img {
+    width: 100%;
+    max-width: 160px;
+  }
+
+  .funcionamiento-image .leyenda {
+    max-width: 160px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
