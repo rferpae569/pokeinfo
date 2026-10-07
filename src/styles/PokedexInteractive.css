@@ -79,3 +79,91 @@ button:active {
   box-shadow: inset -4px 4px 0 #222;
   font-size: 0.9rem;
 }
+
+/* =========================
+   RESPONSIVE - TABLET
+   ========================= */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .pokedex-section {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    margin: 2% auto 0;
+  }
+
+  .pokedex {
+    width: 100%;
+    max-width: 425px;
+  }
+
+  .Imagen_Pokemon {
+    height: 18%;
+    width: 22%;
+    left: 50%;
+    bottom: 55%;
+    transform: translate(-63%, 20%);
+  }
+
+  .pokemon_data {
+    top: 54.5%;
+    right: 31%;
+    font-size: clamp(8px, 5vw, 25px);
+  }
+
+  form {
+    width: 65%;
+    top: 65%;
+    left: 10%;
+  }
+
+  .buttons {
+    width: 65%;
+    bottom: 10%;
+    left: 47%;
+    transform: translate(-57%, 0);
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1400px) {
+
+  .pokedex-section {
+    width: 100%;
+    max-width: 550px;
+    padding: 15px;
+    margin: 2% auto 0;
+  }
+
+  .pokedex {
+    width: 100%;
+    max-width: 475px;
+  }
+
+  .Imagen_Pokemon {
+    height: 18%;
+    width: 22%;
+    left: 50%;
+    bottom: 55%;
+    transform: translate(-63%, 20%);
+  }
+
+  .pokemon_data {
+    top: 54.5%;
+    right: 29%;
+    font-size: clamp(8px, 5vw, 25px);
+  }
+
+  form {
+    width: 65%;
+    top: 65%;
+    left: 11%;
+  }
+
+  .buttons {
+    width: 65%;
+    bottom: 10%;
+    left: 48%;
+    transform: translate(-57%, 0);
+  }
+
+}

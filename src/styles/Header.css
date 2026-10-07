@@ -215,3 +215,84 @@ nav a:first-child {
   margin-top: -250px;
   visibility: hidden;
 }
+
+/* ========================= */
+/* TABLETS */
+/* ========================= */
+@media (min-width: 769px) and (max-width: 1366px) {
+
+  .header {
+    width: 100%;
+    padding: 0.5rem 1rem;
+  }
+
+  nav {
+    width: 100%;
+    max-width: none;
+    padding: 0.25rem;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .header .logo img {
+    width: 100px;
+    height: 90px;
+  }
+
+  /* Hamburguesa */
+  .menu-toggle {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  /* Menú desplegable */
+  .header ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin: 0;
+    padding: 0.75rem 0;
+    background-color: #e53e3e;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .header ul.menu-open {
+    display: flex;
+  }
+
+  .header ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .header ul li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+
+  /* ===================== */
+  /* HAMBURGUESA → X */
+  /* ===================== */
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}

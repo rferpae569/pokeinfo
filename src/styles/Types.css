@@ -166,3 +166,35 @@
     margin-top: 1rem;
   }
 }
+
+@media (min-width: 769px) and (max-width: 1366px) {
+
+  .types-wrapper {
+    flex-direction: column;
+  }
+
+  .types-container {
+    width: 100%;
+  }
+
+  .types-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .type-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .type-info-panel {
+    width: 100%;
+    margin-top: 1rem;
+    flex: none;
+  }
+
+  .type-info-content {
+    width: 100%;
+    padding: 1rem;
+  }
+}

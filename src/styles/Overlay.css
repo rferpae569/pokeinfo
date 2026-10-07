@@ -34,7 +34,7 @@
 }
 
 .overlay img {
-  width: 25%;
+  width: 20%;
   height: 25%;
   margin-bottom: 1rem;
 }
@@ -111,6 +111,12 @@
   text-align: center;       
   font-size: 1rem;
   text-transform: capitalize;
+}
+
+.trainer-overlay-content {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
@@ -196,6 +202,34 @@
 
   .pokemon-card span {
     font-size: 0.85rem;
+  }
+}
+
+/* =========================
+   RESPONSIVE - TABLET
+   ========================= */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .pokemon-team-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    width: 100%;
+    justify-items: center;
+  }
+
+  .pokemon-card {
+    width: 140px;
+    padding: 0.3rem;
+  }
+
+  .pokemon-card img {
+    width: 85px;
+    height: 85px;
+  }
+
+  .pokemon-card span {
+    font-size: 0.9rem;
   }
 }
 

@@ -182,3 +182,16 @@ img.funcpokedex {
     margin-right: auto;
   }
 }
+
+/*Responsive tablet*/
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .funcionamiento-image .funcionamiento-item {
+    text-align: center;
+  }
+
+  .funcionamiento-image img {
+    display: inline-block;
+  }
+
+}

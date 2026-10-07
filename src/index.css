@@ -36,3 +36,12 @@ body {
     min-width: 0;
   }
 }
+
+/* Responsive - tablet */
+@media (min-width: 769px) and (max-width: 1366px) {
+  main {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+}

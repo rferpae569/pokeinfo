@@ -154,10 +154,14 @@ const cardAnim = (i) => ({
 export default function Types() {
   const [selectedType, setSelectedType] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isTablet, setIsTablet] = useState(
+    window.innerWidth > 768 && window.innerWidth <= 1366,
+  );
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
+      setIsTablet(window.innerWidth > 768 && window.innerWidth <= 1366);
     };
 
     window.addEventListener("resize", handleResize);
@@ -190,7 +194,7 @@ export default function Types() {
           className="types-container"
           ref={typesRef}
           animate={{
-            x: selectedType && !isMobile ? -150 : 0,
+            x: selectedType && !isMobile && !isTablet ? -150 : 0,
             transition: { type: "spring", stiffness: 100, damping: 20 },
           }}
         >
@@ -241,7 +245,7 @@ export default function Types() {
           className="type-info-panel"
           initial={{ width: 0, opacity: 0 }}
           animate={{
-            width: selectedType ? (isMobile ? "100%" : "300px") : 0,
+            width: selectedType ? (isMobile || isTablet ? "100%" : "300px") : 0,
             opacity: selectedType ? 1 : 0,
             transition: { type: "spring", stiffness: 100, damping: 20 },
           }}
@@ -251,15 +255,15 @@ export default function Types() {
               style={{
                 top: 0,
                 left: 0,
-                width: isMobile ? "100%" : "300px",
+                width: isMobile || isTablet ? "100%" : "300px",
               }}
             >
               {" "}
               <motion.div
                 key={selectedType}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: isMobile || isTablet ? 40 : 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
+                exit={{ opacity: 0, y: isMobile || isTablet ? 40 : 20 }}
                 transition={{ duration: 0.4 }}
                 className="type-info-content"
               >
